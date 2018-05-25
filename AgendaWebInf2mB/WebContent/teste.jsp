@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header>
-			<h1>Resultado</h1>
+			<h1>Resultados</h1>
 		</header>
 		
 		<%
