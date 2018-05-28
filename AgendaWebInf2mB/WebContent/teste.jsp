@@ -11,7 +11,11 @@
 		<header>
 			<h1>Resultados</h1>
 		</header>
-		<!-- Comentário Teste -->
+		<!-- 	
+				Comentário Teste 
+				Testando a atulização GIT 28-05-2018
+		
+		-->
 		<%
 			out.print(request.getParameter("txtNome") + "<br>");
 			out.print(request.getParameter("txtSenha") + "<br>");
