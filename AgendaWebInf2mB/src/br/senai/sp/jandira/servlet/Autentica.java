@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.senai.sp.jandira.dao.UsuarioDAO;
+import br.senai.sp.jandira.modelo.Usuario;
+
 
 @WebServlet("/Autentica") 
 public class Autentica extends HttpServlet {
@@ -26,11 +29,23 @@ public class Autentica extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("USANDO O MÉTODO POST!");
-	
-		request.setAttribute("frase", "Esta é uma frase qualquer!");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("teste.jsp");
+		String email = request.getParameter("txtEmail");
+		String senha = request.getParameter("txtSenha");
+		
+		UsuarioDAO uDao = new UsuarioDAO();
+		Usuario u = new Usuario();
+		
+		u = uDao.autenticar(email, senha);
+				
+		RequestDispatcher rd;
+		
+		if (u == null) {
+			rd = request.getRequestDispatcher("login.html");
+		} else {
+			rd = request.getRequestDispatcher("index.jsp");
+		}
+		
 		rd.forward(request, response);
 		
 	}

@@ -13,9 +13,9 @@
 		</header>
 
 		<%
-			out.print(request.getParameter("txtNome") + "<br>");
+			out.print(request.getParameter("txtEmail") + "<br>");
 			out.print(request.getParameter("txtSenha") + "<br>");
-			out.print(request.getAttribute("frase"));
+			
 		%>
 		
 	</body>
