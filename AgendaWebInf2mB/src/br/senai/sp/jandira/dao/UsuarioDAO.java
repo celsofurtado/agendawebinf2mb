@@ -49,4 +49,36 @@ public class UsuarioDAO {
 		return usuario;
 	}
 	
+	public boolean gravar(Usuario usuario){
+		boolean status = true;
+		
+		String sql = "INSERT INTO usuarios "
+				+ "(nome, email, senha, cidade, dtNasc) "
+				+ "VALUES (?, ?, ?, ?, ?)";
+		
+		stm = null;
+		
+		try {
+			stm = Conexao.getConexao().prepareStatement(sql);
+			stm.setString(1, usuario.getNome());
+			stm.setString(2, usuario.getEmail());
+			stm.setString(3, usuario.getSenha());
+			stm.setString(4, usuario.getCidade());
+			stm.setString(5, usuario.getDtNasc());
+			stm.execute();
+		}catch (Exception e) {
+			status = false;
+			e.printStackTrace();
+		}
+		
+		return status;
+	}
+	
 }
+
+
+
+
+
+
+
