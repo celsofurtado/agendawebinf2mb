@@ -57,7 +57,12 @@
 					<div class="panel-heading">
 						<h3 class="panel-title"><img style="margin-right:10px;" src="imagens/menuB24.png">Menu</h3>
 					</div>
-					<div class="panel-body">Panel content</div>
+					<div class="panel-body">
+						<ul class="nav">
+							<li class="nav-item"><a href="index.jsp">Home</a></li>
+							<li class="nav-item"><a href="cadastrar_contato.jsp">Adicionar Contato</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-9">
@@ -81,6 +86,8 @@
 									<td><%= c.getId() %></td>
 									<td><%= c.getNome() %></td>
 									<td><%= c.getEmail() %></td>
+									<td><a href="editar_contato.jsp?idContato=<%= c.getId() %>"><img src="imagens/edit20.png" /></a></td>
+									<td><a href="excluir_contato.jsp?idContato=<%= c.getId() %>"><img src="imagens/delete24.png" height="20px" width="20px" /></a></td>
 								</tr>
 								
 							<%	
