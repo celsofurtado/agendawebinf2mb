@@ -66,13 +66,14 @@
 				</div>
 			</div>
 			<div class="col-md-9">
-				<div class="panel panel-primary">
+				<div class="panel panel-danger">
 					<div class="panel-heading">
-						<h3 class="panel-title"><img style="margin-right:10px;" src="imagens/usersB24.png">Meus Contatos</h3>
+						<h3 class="panel-title"><img style="margin-right:10px;" src="imagens/usersB24.png">Excluir Contato</h3>
 					</div>
 					<div class="panel-body">
+					<p style="color: red; size: 20;"><img src="imagens/warning32.png">ATENÇÃO! Os dados serão excluídos!</p>
 						<!-- FORMULÁRIO DE CADASTRO DE CONTATOS -->
-						<form method="GET" action="AtualizarContato">
+						<form method="GET" action="ExcluirContato">
 							<!-- LINHA 01 -->
 							<fieldset>
 								<legend>Dados gerais:</legend>
@@ -148,9 +149,8 @@
 							
 							<div class="form-row">
 								<div class="col-md-12">
-									<input type="submit" value=">> Salvar" class="btn btn-success" />
-									<input type="reset" value=">> Limpar" class="btn btn-warning" />
-									<a href="index.jsp" class="btn btn-danger">>> Cancelar</a>
+									<input type="submit" value=">> Excluir" class="btn btn-danger" />
+									<a href="index.jsp" class="btn btn-success">>> Cancelar</a>
 								</div>
 							</div>
 						</form>
